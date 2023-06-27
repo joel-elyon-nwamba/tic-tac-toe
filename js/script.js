@@ -11,14 +11,23 @@ const Gameboard = (() => {
   Set the current player up
   and set the following the player number 2's turn
    */
+  
 
   /* 
   grab the class cell to have access to the board
   */
-
+  const cells = document.querySelectorAll(".cell");
+  /*
+  Select the restart button
+  */
+ const restartBtn = document.querySelector(".restart-btn");
+  /*
+  button to start new game
+   */
+  const newGame = document.querySelector(".new-btn");
   /*
   Here we're gonna create winning conditions for the game
-   */
+  */
   const winningConditions = [
       [0, 1, 2],
       [3, 4, 5],
@@ -29,7 +38,7 @@ const Gameboard = (() => {
       [0, 4, 8],
       [2, 4, 6]
   ];
-  const checkScore = () => {
+  const checkWinner = () => {
       /**
        * iterate through the arraye
        */
